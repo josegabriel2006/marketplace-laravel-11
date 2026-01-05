@@ -1,17 +1,17 @@
 <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html">Nexus Pro</a>
+            <a href="{{ route('admin.dashboard') }}">Nexus Pro</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">NXP</a>
+            <a href="{{ route('admin.dashboard') }}">NXP</a>
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Painel</li>
             <li class="dropdown active">
-              <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Configurações</span></a>
+              <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Painel</span></a>
               <ul class="dropdown-menu">
-                <li class=active><a class="nav-link" href="index-0.html">Painel Geral</a></li>
+                <li class=active><a class="nav-link" href="index-0.html">Configurações Gerais</a></li>
                 <li><a class="nav-link" href="index.html">Painel Ecommerce</a></li>
               </ul>
             </li>

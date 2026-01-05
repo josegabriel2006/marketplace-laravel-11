@@ -37,48 +37,32 @@
             </div>
 
             <div class="card card-primary" style="background: #571980; color: #FFF; border: none;">
-              <div class="card-header" style="align-items: center; justify-content: center;"><h4>Acesso Administrativo</h4></div>
-
+              <div class="card-header" style="align-items: center; justify-content: center;"><h4>Recuperar Senha</h4></div>
+              <br>
+              @if(session('status'))
+                <p class="alert alert-warning">
+                  Enviamos um link de recuperação para o seu e-mail. Acesse sua caixa de entrada e siga as instruções para redefinir sua senha.
+                </p>
+              @endif
               <div class="card-body">
-                <form method="post" action="{{ route('login') }}" class="needs-validation" novalidate="">
+                <form method="post" action="{{ route('password.email') }}" class="needs-validation" novalidate="">
                 @csrf
                   <div class="form-group">
 
-                    <input id="email" type="email" class="form-control" name="email" placeholder="E-mail de Acesso" tabindex="1" value="{{ old('email') }}" required autofocus>
-                    @if($errors -> has('email'))
+                    <input id="email" type="email" class="form-control" name="email" placeholder="E-mail para recuperação" tabindex="1" value="{{ old('email') }}" required autofocus>
+                    @if($errors -> get('email'))
                     <code>{{ $errors -> first('email') }}</code>
                     @endif
                   </div>
 
                   <div class="form-group">
-                    <div class="d-block">
-
-                      <div class="float-right">
-                        @if (Route::has('admin.forgot'))
-                        <a href="{{ route('admin.forgot') }}" class="text-small" style="color: #FFF;">
-                          Esqueceu Sua Senha?
-                        </a>
-                        @endif
-                      </div>
-                    </div>
-                    <input id="password" type="password" class="form-control" name="password"  placeholder="Sua Senha" tabindex="2" value="{{ old('password') }}" required>
-                    @if($errors -> has('password'))
-                    <code>{{ $errors -> first('password') }}</code>
-                    @endif
-                  </div>
-
-                  <div class="form-group">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember-me">
-                      <label class="custom-control-label" for="remember-me">Lembre-me</label>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4" style="background: #ffcc00; color: #000;">
-                      Entrar
+                      Recuperar
                     </button>
                   </div>
+                  <p style="text-align: center;">
+                    <a href="{{ route('admin.login') }}" title="Voltar para o Login" style="color: #FFF">Voltar para o Login</a>
+                </p>
                 </form>
 
               </div>
@@ -113,3 +97,4 @@
   <script src="{{ asset('backend/assets/js/custom.js') }}"></script>
 </body>
 </html>
+

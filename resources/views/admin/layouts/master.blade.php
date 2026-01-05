@@ -52,7 +52,7 @@
       <!-- START FOOTER -->
       <footer class="main-footer">
         <div class="footer-left">
-          Todos os Direitos Reservados &copy; <?= date('Y') ?> <div class="bullet"></div> Desenvolvido por <a href="https://nexuspro.com.br/">Nexus Pro</a> Versão 1.0
+          Todos os Direitos Reservados &copy; <?= date('Y') ?> <div class="bullet"></div> Desenvolvido por <a href="https://nexuspro.com.br/">José Gabriel</a> Versão 1.0
         </div>
         <div class="footer-right">
 
